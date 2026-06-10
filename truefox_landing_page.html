@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrueFox Consultancy — Strategy That Moves Nations</title>
+<meta name="description" content="TrueFox Consultancy is a full-spectrum political and brand consultancy delivering razor-sharp intelligence, campaign strategy, and brand architecture across India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0A0A0A;
+  --dark: #111111;
+  --card: #141414;
+  --navy: #1B3A6B;
+  --navy-light: #2A4F96;
+  --orange: #E8700A;
+  --orange-light: #FF8C2A;
+  --white: #FFFFFF;
+  --gray: #777777;
+  --light-gray: #B8B8B8;
+  --border: #1E1E1E;
+  --border-mid: #2A2A2A;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(10,10,10,0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 6%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+}
+.nav-brand {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px; font-weight: 900;
+  text-transform: uppercase; letter-spacing: 2px;
+  color: var(--white); text-decoration: none;
+}
+.nav-brand em { color: var(--orange); font-style: normal; }
+.nav-sub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 9px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gray);
+  display: block; margin-top: -2px;
+}
+.nav-links {
+  display: flex; list-style: none;
+  gap: 28px; align-items: center;
+}
+.nav-links a {
+  color: var(--light-gray); text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; letter-spacing: 1.5px;
+  text-transform: uppercase; font-weight: 600;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-cta {
+  background: var(--orange) !important; color: var(--white) !important;
+  padding: 8px 22px; border-radius: 2px;
+  transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(--orange-light) !important; }
+.hamburger {
+  display: none; flex-direction: column;
+  gap: 5px; cursor: pointer; padding: 6px;
+}
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--white); }
+
+/* ─── HERO ────────────────────────────── */
+#hero {
+  min-height: 100vh; position: relative;
+  display: flex; align-items: center;
+  padding: 130px 6% 80px;
+  overflow: hidden;
+}
+.hero-gradient {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 60% at 65% 50%, rgba(27,58,107,0.28) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 85% 15%, rgba(232,112,10,0.14) 0%, transparent 60%);
+}
+.hero-grid-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+.hero-content { position: relative; z-index: 2; max-width: 680px; }
+.eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; letter-spacing: 3.5px;
+  text-transform: uppercase; color: var(--orange);
+  font-weight: 700; margin-bottom: 22px;
+  display: flex; align-items: center; gap: 14px;
+}
+.eyebrow::before { content:''; width: 36px; height: 2px; background: var(--orange); flex-shrink:0; }
+.hero-h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(56px, 9vw, 104px);
+  font-weight: 900; line-height: 0.92;
+  text-transform: uppercase; letter-spacing: -1px;
+  margin-bottom: 28px;
+}
+.hero-h1 em { color: var(--orange); font-style: normal; }
+.hero-lead {
+  font-size: 17px; color: var(--light-gray);
+  line-height: 1.75; max-width: 500px;
+  margin-bottom: 44px; font-weight: 300;
+}
+.btn-group { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-fill {
+  background: var(--orange); color: var(--white);
+  padding: 14px 38px; text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 700;
+  border-radius: 2px; transition: background 0.25s, transform 0.2s;
+  display: inline-block;
+}
+.btn-fill:hover { background: var(--orange-light); transform: translateY(-2px); }
+.btn-ghost {
+  border: 1.5px solid rgba(255,255,255,0.22);
+  color: var(--white); padding: 14px 38px;
+  text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 700;
+  border-radius: 2px; transition: border-color 0.25s, color 0.25s;
+  display: inline-block;
+}
+.btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
+.hero-stats {
+  position: absolute; right: 6%; bottom: 80px;
+  display: flex; gap: 52px; z-index: 2;
+}
+.stat { text-align: right; }
+.stat-n {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 54px; font-weight: 900; line-height: 1; color: var(--white);
+}
+.stat-n sup { color: var(--orange); font-size: 28px; vertical-align: top; }
+.stat-l {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gray);
+  font-weight: 600; margin-top: 4px;
+}
+
+/* ─── DIVIDERS ────────────────────────── */
+.div-orange { height: 2px; background: linear-gradient(90deg, var(--orange) 0%, var(--navy) 55%, transparent 100%); }
+.div-line   { height: 1px; background: var(--border); }
+
+/* ─── SHARED SECTION STYLES ───────────── */
+section { padding: 100px 6%; position: relative; }
+.sec-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; letter-spacing: 3.5px;
+  text-transform: uppercase; color: var(--orange);
+  font-weight: 700; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 12px;
+}
+.sec-eyebrow::before { content:''; width: 26px; height: 2px; background: var(--orange); flex-shrink:0; }
+.sec-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(38px, 5.5vw, 68px);
+  font-weight: 900; text-transform: uppercase;
+  letter-spacing: -0.5px; line-height: 0.95;
+}
+.sec-body {
+  font-size: 15px; color: var(--light-gray);
+  line-height: 1.78; font-weight: 300;
+  margin-bottom: 18px;
+}
+.sec-body strong { color: var(--white); font-weight: 500; }
+
+/* ─── ABOUT ───────────────────────────── */
+#about { background: var(--dark); }
+.about-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+.val {
+  border-left: 2px solid var(--orange);
+  padding-left: 16px;
+}
+.val-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--white); margin-bottom: 4px;
+}
+.val-desc { font-size: 12px; color: var(--gray); line-height: 1.5; }
+.about-card {
+  background: var(--card); border: 1px solid var(--border-mid);
+  border-radius: 3px; padding: 44px 40px;
+  border-top: 3px solid var(--orange);
+}
+.about-card-tag {
+  display: inline-block;
+  background: rgba(232,112,10,0.1);
+  border: 1px solid rgba(232,112,10,0.25);
+  color: var(--orange);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 700;
+  padding: 5px 12px; border-radius: 2px;
+  margin-bottom: 20px;
+}
+.about-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 28px; font-weight: 800;
+  text-transform: uppercase; margin-bottom: 16px;
+}
+.about-quote {
+  font-size: 15px; color: var(--light-gray);
+  line-height: 1.75; font-weight: 300;
+  margin-bottom: 14px;
+  border-left: 2px solid rgba(232,112,10,0.4);
+  padding-left: 16px;
+  font-style: italic;
+}
+
+/* ─── SERVICES ────────────────────────── */
+#services { background: var(--black); }
+.services-header {
+  display: flex; justify-content: space-between;
+  align-items: flex-end; flex-wrap: wrap;
+  gap: 24px; margin-bottom: 56px;
+}
+.services-header-note {
+  max-width: 380px; font-size: 15px;
+  color: var(--gray); line-height: 1.7;
+  font-weight: 300;
+}
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border);
+}
+.svc-card {
+  background: var(--dark); padding: 40px 32px;
+  position: relative; overflow: hidden;
+  transition: background 0.3s;
+}
+.svc-card:hover { background: #161616; }
+.svc-card::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; width: 0; height: 2px;
+  background: var(--orange); transition: width 0.4s ease;
+}
+.svc-card:hover::after { width: 100%; }
+.svc-icon {
+  width: 48px; height: 48px;
+  background: rgba(232,112,10,0.08);
+  border: 1px solid rgba(232,112,10,0.18);
+  border-radius: 4px; display: flex;
+  align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 22px;
+}
+.svc-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 19px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 10px; color: var(--white);
+}
+.svc-desc { font-size: 13px; color: var(--gray); line-height: 1.7; font-weight: 300; }
+
+/* ─── EXPERIENCE ──────────────────────── */
+#experience { background: var(--dark); }
+.exp-top {
+  display: flex; align-items: flex-end;
+  justify-content: space-between; flex-wrap: wrap;
+  gap: 24px; margin-bottom: 60px;
+}
+.exp-ghost-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 110px; font-weight: 900;
+  line-height: 1; color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.07);
+}
+.states-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border);
+}
+.state-card {
+  background: var(--card); padding: 28px 22px;
+  transition: background 0.3s; position: relative;
+}
+.state-card:hover { background: #1A1A1A; }
+.state-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 9px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--orange);
+  font-weight: 700; margin-bottom: 6px;
+}
+.state-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px; font-weight: 800;
+  text-transform: uppercase; margin-bottom: 10px;
+  color: var(--white);
+}
+.state-desc { font-size: 12px; color: var(--gray); line-height: 1.65; font-weight: 300; }
+.state-badge {
+  display: inline-block; margin-top: 14px;
+  background: rgba(27,58,107,0.3);
+  border: 1px solid rgba(27,58,107,0.5);
+  color: #7BA7E8;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 9px; letter-spacing: 1.5px;
+  text-transform: uppercase; font-weight: 600;
+  padding: 3px 9px; border-radius: 2px;
+}
+
+/* ─── TRUEFOX MEDIA ───────────────────── */
+#media {
+  background: var(--navy);
+  padding: 120px 6%; text-align: center;
+  position: relative; overflow: hidden;
+}
+.media-ghost {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 240px; font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.04);
+  white-space: nowrap; pointer-events: none;
+  user-select: none;
+}
+.media-inner {
+  position: relative; z-index: 2;
+  max-width: 680px; margin: 0 auto;
+}
+.media-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; letter-spacing: 3.5px;
+  text-transform: uppercase; color: var(--orange);
+  font-weight: 700; margin-bottom: 20px;
+}
+.media-h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(44px, 7vw, 80px);
+  font-weight: 900; text-transform: uppercase;
+  line-height: 0.92; margin-bottom: 28px;
+}
+.media-h2 em { color: var(--orange); font-style: normal; }
+.media-text {
+  font-size: 16px; color: rgba(255,255,255,0.65);
+  line-height: 1.8; font-weight: 300;
+  margin-bottom: 44px;
+}
+
+/* ─── BRAND CONSULTING ────────────────── */
+#brand { background: var(--black); }
+.brand-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.pillars { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+.pillar {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px; background: var(--dark);
+  border: 1px solid var(--border);
+}
+.pillar-dot { width: 7px; height: 7px; background: var(--orange); border-radius: 50%; flex-shrink:0; }
+.pillar-text { font-size: 14px; color: var(--light-gray); }
+.brand-cta {
+  background: var(--dark); border: 1px solid var(--border-mid);
+  border-radius: 3px; padding: 52px 44px;
+  border-top: 3px solid var(--orange);
+}
+.brand-cta h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 30px; font-weight: 800;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.brand-cta p { font-size: 14px; color: var(--light-gray); line-height: 1.75; font-weight: 300; margin-bottom: 32px; }
+.brand-contact-strip {
+  border-top: 1px solid var(--border);
+  padding-top: 24px; margin-top: 28px;
+}
+.brand-contact-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gray);
+  margin-bottom: 12px;
+}
+.brand-contact-line { font-size: 14px; color: var(--light-gray); margin-bottom: 6px; }
+
+/* ─── CONTACT ─────────────────────────── */
+#contact { background: var(--dark); }
+.contact-header { margin-bottom: 60px; max-width: 560px; }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border);
+}
+.contact-card { background: var(--card); padding: 56px 48px; transition: background 0.3s; }
+.contact-card:hover { background: #181818; }
+.contact-type {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; font-weight: 700;
+  margin-bottom: 18px; display: flex;
+  align-items: center; gap: 10px;
+}
+.ct-hire { color: var(--orange); }
+.ct-hire::before { content:''; width: 22px; height: 2px; background: var(--orange); }
+.ct-join { color: #7BA7E8; }
+.ct-join::before { content:''; width: 22px; height: 2px; background: #7BA7E8; }
+.contact-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 50px; font-weight: 900;
+  text-transform: uppercase; line-height: 0.95;
+  margin-bottom: 20px;
+}
+.contact-desc { font-size: 15px; color: var(--light-gray); line-height: 1.72; font-weight: 300; margin-bottom: 36px; }
+.btn-hire {
+  background: var(--orange); color: var(--white);
+  padding: 14px 42px; text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 700;
+  border-radius: 2px; display: inline-block;
+  transition: background 0.25s;
+}
+.btn-hire:hover { background: var(--orange-light); }
+.btn-join {
+  background: var(--navy); color: var(--white);
+  padding: 14px 42px; text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 700;
+  border-radius: 2px; display: inline-block;
+  transition: background 0.25s;
+}
+.btn-join:hover { background: var(--navy-light); }
+
+/* ─── FOOTER ──────────────────────────── */
+footer {
+  background: var(--black);
+  border-top: 1px solid var(--border);
+  padding: 44px 6%;
+  display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 28px;
+}
+.footer-brand-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px; font-weight: 900;
+  text-transform: uppercase; letter-spacing: 2px;
+}
+.footer-brand-name em { color: var(--orange); font-style: normal; }
+.footer-brand-sub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 9px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gray);
+}
+.footer-contacts { display: flex; gap: 44px; }
+.fci-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gray);
+}
+.fci-val { font-size: 14px; color: var(--light-gray); margin-top: 2px; }
+.footer-copy {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gray);
+}
+
+/* ─── SCROLL INDICATOR ────────────────── */
+.scroll-hint {
+  position: absolute; bottom: 32px; left: 6%;
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gray);
+  font-weight: 600;
+}
+.scroll-line { width: 40px; height: 1px; background: var(--border-mid); }
+
+/* ─── RESPONSIVE ──────────────────────── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .about-wrap, .brand-wrap { grid-template-columns: 1fr; gap: 40px; }
+  .svc-grid { grid-template-columns: 1fr 1fr; }
+  .states-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .hero-stats { position: static; justify-content: flex-start; margin-top: 48px; gap: 32px; }
+  .services-header { flex-direction: column; align-items: flex-start; }
+  footer { flex-direction: column; align-items: flex-start; }
+  .footer-contacts { flex-direction: column; gap: 20px; }
+}
+@media (max-width: 600px) {
+  .svc-grid { grid-template-columns: 1fr; }
+  .states-grid { grid-template-columns: 1fr; }
+  .about-values { grid-template-columns: 1fr; }
+  .contact-card { padding: 40px 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════ -->
+<nav>
+  <a href="#hero" class="nav-brand">
+    TRUE<em>FOX</em>
+    <span class="nav-sub">Consultancy</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Who We Are</a></li>
+    <li><a href="#services">What We Do</a></li>
+    <li><a href="#experience">Experiences</a></li>
+    <li><a href="#media">TF Media</a></li>
+    <li><a href="#brand">Brand</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════
+     HERO — WHO ARE WE
+══════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-gradient"></div>
+  <div class="hero-grid-bg"></div>
+
+  <div class="hero-content">
+    <div class="eyebrow">Political &amp; Brand Consultancy</div>
+    <h1 class="hero-h1">
+      Strategy<br>That <em>Moves</em><br>Nations.
+    </h1>
+    <p class="hero-lead">
+      TrueFox Consultancy delivers razor-sharp political intelligence, 
+      campaign architecture, and brand strategy to leaders and organisations 
+      who demand outcomes — not excuses.
+    </p>
+    <div class="btn-group">
+      <a href="#services" class="btn-fill">Explore Our Work</a>
+      <a href="#contact" class="btn-ghost">Work With Us</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-n">11<sup>+</sup></div>
+      <div class="stat-l">States</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">10<sup>+</sup></div>
+      <div class="stat-l">Years Experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">50<sup>+</sup></div>
+      <div class="stat-l">Campaigns Managed</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<div class="div-orange"></div>
+
+
+<!-- ══════════════════════════════════════
+     ABOUT
+══════════════════════════════════════ -->
+<section id="about">
+  <div class="about-wrap">
+    <div>
+      <div class="sec-eyebrow">Who We Are</div>
+      <h2 class="sec-title" style="margin-bottom:28px;">Intelligence.<br>Instinct.<br>Impact.</h2>
+
+      <p class="sec-body">
+        TrueFox Consultancy is a <strong>full-spectrum political and brand consultancy</strong> built for those who play to win. We combine ground-level intelligence with data-backed strategy to deliver results that matter — in elections, in boardrooms, and in the marketplace.
+      </p>
+      <p class="sec-body">
+        We are a team of <strong>strategists, analysts, storytellers, and campaign managers</strong> who understand India's complex political and social landscape like few others. From Lok Sabha mandates to state assembly battles and brand launches, we have been in the trenches — crafting the roadmaps that lead to victory.
+      </p>
+      <p class="sec-body">
+        We don't just consult — <strong>we get in the game.</strong> Our work is evidence-driven, our strategies are adaptive, and our commitment is unconditional.
+      </p>
+
+      <div class="about-values">
+        <div class="val">
+          <div class="val-title">Data-Driven</div>
+          <div class="val-desc">Every strategy anchored in verified ground intelligence</div>
+        </div>
+        <div class="val">
+          <div class="val-title">Instinctive</div>
+          <div class="val-desc">Political sensibility built over a decade in the field</div>
+        </div>
+        <div class="val">
+          <div class="val-title">Adaptive</div>
+          <div class="val-desc">Real-time pivots based on evolving campaign dynamics</div>
+        </div>
+        <div class="val">
+          <div class="val-title">Result-Focused</div>
+          <div class="val-desc">Measured against outcomes, not effort</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="about-card">
+        <div class="about-card-tag">Our Philosophy</div>
+        <h3>The Fox Knows The Ground.</h3>
+        <p class="about-quote">
+          In political strategy, those who win aren't always the loudest — they're the most perceptive. Sharp intelligence, relentless preparation, and authentic storytelling create unstoppable momentum.
+        </p>
+        <p class="sec-body" style="font-style:normal;">
+          Whether it is a first-time candidate stepping into the political arena or an established party reclaiming lost ground — TrueFox is the partner who maps the terrain before the battle begins.
+        </p>
+        <p class="sec-body" style="font-style:normal;">
+          Whether it is a first-time founder building a brand identity from scratch or an organisation seeking to redefine its market presence — TrueFox turns vision into velocity.
+        </p>
+        <a href="#contact" class="btn-fill" style="font-size:13px;padding:12px 28px;margin-top:8px;">Start a Conversation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+
+<!-- ══════════════════════════════════════
+     SERVICES — WHAT WE DO
+══════════════════════════════════════ -->
+<section id="services">
+  <div class="services-header">
+    <div>
+      <div class="sec-eyebrow">What We Do</div>
+      <h2 class="sec-title">Our Services</h2>
+    </div>
+    <p class="services-header-note">
+      From campaign war rooms to brand launch suites — we cover every dimension of strategic consulting so you never need to look elsewhere.
+    </p>
+  </div>
+
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-icon">🗺️</div>
+      <div class="svc-name">Political Campaign Management</div>
+      <div class="svc-desc">End-to-end campaign orchestration — manifesto design, speech creation, movement of star campaigners, grassroots mobilisation, and digital campaign machinery. We build campaigns that move people and shift outcomes.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">📊</div>
+      <div class="svc-name">Data Analysis & Visualization</div>
+      <div class="svc-desc">Cutting-edge dashboards and infographics using PowerBI and Tableau. We transform raw ground data into compelling visual intelligence — constituency journeys, community-weighted reports, and live campaign trackers.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🔍</div>
+      <div class="svc-name">Pre-Poll Electorate Analysis</div>
+      <div class="svc-desc">Candidate profiling, demographic constituency mapping, SWOT analysis, and qualitative manifesto research. We decode voter intent before the ballot is cast — giving you the decisive information advantage.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🗳️</div>
+      <div class="svc-name">Opinion Polls & Primary Surveys</div>
+      <div class="svc-desc">Scientifically designed surveys with built-in data consistency checks. Large-scale stratified sample collection — statewide or constituency-specific — with real-time field monitoring and rapid turnaround analysis.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🎥</div>
+      <div class="svc-name">Multimedia Content Creation</div>
+      <div class="svc-desc">Political audio-video assets, motion graphics, documentary content, and digital storytelling. We craft narratives that resonate, spread, and convert attention into active support — across every screen and platform.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">📱</div>
+      <div class="svc-name">Media Management</div>
+      <div class="svc-desc">Full-spectrum management of social and digital media for candidates and organisations. Platform strategy, crisis communications, content calendars, influencer coordination, and real-time narrative management.</div>
+    </div>
+  </div>
+</section>
+
+<div class="div-orange"></div>
+
+
+<!-- ══════════════════════════════════════
+     EXPERIENCES
+══════════════════════════════════════ -->
+<section id="experience">
+  <div class="exp-top">
+    <div>
+      <div class="sec-eyebrow">Track Record</div>
+      <h2 class="sec-title">Experiences<br>&amp; Projects</h2>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;font-weight:300;max-width:500px;margin-top:16px;">
+        A decade of decisive engagements across India's most competitive electoral battlegrounds — from national mandates to critical state assemblies.
+      </p>
+    </div>
+    <div class="exp-ghost-num">11+</div>
+  </div>
+
+  <div class="states-grid">
+    <div class="state-card">
+      <div class="state-tag">Central India</div>
+      <div class="state-name">Chhattisgarh</div>
+      <div class="state-desc">Four rounds of longitudinal stratified surveys over six months — 30,000+ samples. In-depth candidate analysis for each assembly constituency with dedicated digital and regional campaign management teams deployed.</div>
+      <div class="state-badge">Assembly Election</div>
+    </div>
+    <div class="state-card">
+      <div class="state-tag">Central India</div>
+      <div class="state-name">Madhya Pradesh</div>
+      <div class="state-desc">Stratified sampling across multiple bye-elections. Full socio-cultural and economic groundwork, precise candidate profiling, real-time data collection, telephonic follow-ups, and a dedicated online campaign team setup.</div>
+      <div class="state-badge">Bye-Elections</div>
+    </div>
+    <div class="state-card">
+      <div class="state-tag">North India</div>
+      <div class="state-name">Rajasthan</div>
+      <div class="state-desc">Vidhan Sabha surveys covering 700–1500 samples per constituency. Tailored questionnaires, booth-level performance analysis from past elections, and strategic intervention to increase vote share in historically low-performance areas.</div>
+      <div class="state-badge">Vidhan Sabha</div>
+    </div>
+    <div class="state-card">
+      <div class="state-tag">National</div>
+      <div class="state-name">India Lok Sabha</div>
+      <div class="state-desc">National-level campaign intelligence and advisory for General Election mandates. Multi-state coordination, community-weighted constituency analysis, and pan-India digital narrative architecture.</div>
+      <div class="state-badge">General Election</div>
+    </div>
+    <div class="state-card">
+      <div class="state-tag">North India</div>
+      <div class="state-name">Delhi</div>
+      <div class="state-desc">90,000+ respondent statewide survey for Vidhan Sabha and MCD elections. Six-month longitudinal campaign impact study, constituency-specific reports, and full online campaign machinery development and execution.</div>
+      <div class="state-badge">Assembly + MCD</div>
+    </div>
+    <div class="state-card">
+      <div class="state-tag">North India</div>
+      <div class="state-name">Haryana</div>
+      <div class="state-desc">Stratified sampling of 2,10,000+ individuals — over one-third revisited to track campaign performance shifts. Comprehensive Power BI and Tableau visual reports presented directly to senior political leadership.</div>
+      <div class="state-badge">Assembly Election</div>
+    </div>
+    <div class="state-card">
+      <div class="state-tag">East India</div>
+      <div class="state-name">Bihar</div>
+      <div class="state-desc">Pre-poll electorate analysis and political advisory covering candidate selection, alliance partnership evaluation, and targeted social messaging strategies across Bihar's assembly and Lok Sabha constituencies.</div>
+      <div class="state-badge">Assembly + Lok Sabha</div>
+    </div>
+    <div class="state-card">
+      <div class="state-tag">Northeast India</div>
+      <div class="state-name">Assam</div>
+      <div class="state-desc">Statewide primary survey to identify potential alliance partners and evaluate sitting MLAs against emerging new faces across all constituencies — an actionable political strategy delivered as the primary outcome.</div>
+      <div class="state-badge">Assembly Election</div>
+    </div>
+    <div class="state-card">
+      <div class="state-tag">West India</div>
+      <div class="state-name">Goa</div>
+      <div class="state-desc">Constituency-level analysis and campaign advisory for Goa's high-stakes elections — combining booth-level performance data with community analysis and targeted digital outreach for precision campaign management.</div>
+      <div class="state-badge">Assembly Election</div>
+    </div>
+    <div class="state-card">
+      <div class="state-tag">East India</div>
+      <div class="state-name">Jharkhand</div>
+      <div class="state-desc">45,000+ individual surveys with a 2,000-person pilot. Research mapped government welfare reach, identified key public issues, and shaped a five-year manifesto roadmap — the majority of recommendations incorporated into election strategy.</div>
+      <div class="state-badge">Assembly Election</div>
+    </div>
+    <div class="state-card">
+      <div class="state-tag">East India</div>
+      <div class="state-name">Odisha</div>
+      <div class="state-desc">Primary survey and actionable political strategy covering demographic profiling, alliance structure analysis, candidate performance evaluation, and digital campaign management across Assembly and Lok Sabha seats.</div>
+      <div class="state-badge">Assembly + Lok Sabha</div>
+    </div>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+
+<!-- ══════════════════════════════════════
+     TRUEFOX MEDIA
+══════════════════════════════════════ -->
+<section id="media">
+  <div class="media-ghost">MEDIA</div>
+  <div class="media-inner">
+    <div class="media-eyebrow">TrueFox Media</div>
+    <h2 class="media-h2">
+      Where Stories<br><em>Find Their</em><br>Voice.
+    </h2>
+    <p class="media-text">
+      TrueFox Media is our digital content wing built on a single belief: meaningful presence is earned through participation, not broadcasting. We create immersive, participatory digital media ecosystems — where audiences don't just consume, they engage, respond, and become part of the narrative itself. From political storytelling and brand journalism to documentary content and social media architectures, TrueFox Media builds the infrastructure that makes ideas travel far and fast.
+    </p>
+    <a href="#contact" class="btn-fill">Collaborate With Us</a>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+
+<!-- ══════════════════════════════════════
+     BRAND CONSULTING
+══════════════════════════════════════ -->
+<section id="brand">
+  <div class="brand-wrap">
+    <div>
+      <div class="sec-eyebrow">Brand Consulting</div>
+      <h2 class="sec-title" style="margin-bottom:28px;">From Zero<br>To <em style="color:var(--orange);font-style:normal;">Brand.</em></h2>
+
+      <p class="sec-body">
+        Every great brand begins as an idea in someone's mind. Our job is to give that idea <strong>a name, a face, a voice, and a strategy</strong> that makes it impossible to ignore.
+      </p>
+      <p class="sec-body">
+        At TrueFox Consultancy, we work with entrepreneurs, organisations, and public figures at every stage of the brand journey — from the very first spark to full-scale market presence. Whether you are <strong>launching from scratch</strong> or looking to grow and reposition an existing brand, we bring the frameworks, creative intelligence, and execution muscle to make it happen.
+      </p>
+      <p class="sec-body">
+        We don't just hand you a logo and a mood board. <strong>We build the entire brand architecture</strong> — the strategy, the identity, the presence, and the growth engine.
+      </p>
+
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-dot"></div><div class="pillar-text">Brand Identity & Positioning Strategy</div></div>
+        <div class="pillar"><div class="pillar-dot"></div><div class="pillar-text">Visual Identity, Messaging & Tone of Voice</div></div>
+        <div class="pillar"><div class="pillar-dot"></div><div class="pillar-text">Market Entry & Launch Strategy</div></div>
+        <div class="pillar"><div class="pillar-dot"></div><div class="pillar-text">Digital Presence & Growth Architecture</div></div>
+        <div class="pillar"><div class="pillar-dot"></div><div class="pillar-text">Brand Partnerships & Media Strategy</div></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="brand-cta">
+        <h3>Ready to Build Your Brand?</h3>
+        <p>
+          Tell us where you are — we will take you where you want to be. Whether you're a founder with a vision, an entrepreneur with a product, or an organisation ready to redefine its market presence, TrueFox turns ambition into a brand the world can't overlook.
+        </p>
+        <p>
+          Reach out through the contact form below and let's start building something extraordinary together.
+        </p>
+        <a href="#contact" class="btn-fill" style="font-size:13px;padding:12px 32px;">Let's Build Together</a>
+
+        <div class="brand-contact-strip">
+          <div class="brand-contact-label">Direct Contact</div>
+          <div class="brand-contact-line">📞 &nbsp;+91-7694979697</div>
+          <div class="brand-contact-line">✉️ &nbsp;info@truefox.in</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-orange"></div>
+
+
+<!-- ══════════════════════════════════════
+     CONTACT US
+══════════════════════════════════════ -->
+<section id="contact">
+  <div class="contact-header">
+    <div class="sec-eyebrow">Contact Us</div>
+    <h2 class="sec-title">Let's Make<br>Something Real.</h2>
+    <p style="margin-top:18px;font-size:15px;color:var(--gray);line-height:1.7;font-weight:300;">
+      Whether you're looking to run a campaign, launch a brand, or join the TrueFox team — we want to hear from you.
+    </p>
+  </div>
+
+  <div class="contact-grid">
+    <!-- HIRE US -->
+    <div class="contact-card">
+      <div class="contact-type ct-hire">Hire Us</div>
+      <div class="contact-title">Work With TrueFox</div>
+      <div class="contact-desc">
+        Are you a political party, candidate, organisation, or brand looking for a strategic partner who actually delivers? TrueFox Consultancy brings over a decade of deep ground intelligence and a results-only approach to every engagement. Tell us about your goal — we'll tell you exactly how we get there.
+      </div>
+      <!-- REPLACE THE HREF BELOW WITH YOUR HIRE US GOOGLE FORM LINK -->
+      <a href="YOUR_HIRE_US_GOOGLE_FORM_LINK" target="_blank" rel="noopener" class="btn-hire">Submit Your Brief →</a>
+    </div>
+
+    <!-- JOIN US -->
+    <div class="contact-card">
+      <div class="contact-type ct-join">Join Us</div>
+      <div class="contact-title">Be Part Of The Pack</div>
+      <div class="contact-desc">
+        TrueFox is always looking for exceptional individuals — analysts, strategists, content creators, campaign coordinators, and media professionals who are hungry to work on some of India's most critical and exciting mandates. If you're sharp, driven, and ready to make a real impact — we want you in our pack.
+      </div>
+      <!-- REPLACE THE HREF BELOW WITH YOUR JOIN US GOOGLE FORM LINK -->
+      <a href="YOUR_JOIN_US_GOOGLE_FORM_LINK" target="_blank" rel="noopener" class="btn-join">Apply Now →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <div>
+    <div class="footer-brand-name">TRUE<em>FOX</em></div>
+    <div class="footer-brand-sub">Consultancy</div>
+  </div>
+  <div class="footer-contacts">
+    <div>
+      <div class="fci-label">Phone</div>
+      <div class="fci-val">+91-7694979697</div>
+    </div>
+    <div>
+      <div class="fci-label">Email</div>
+      <div class="fci-val">info@truefox.in</div>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 TrueFox Consultancy. All Rights Reserved.</div>
+</footer>
+
+<script>
+  const ham = document.querySelector('.hamburger');
+  const links = document.querySelector('.nav-links');
+  if (ham && links) {
+    ham.addEventListener('click', () => {
+      const open = links.style.display === 'flex';
+      links.style.display = open ? 'none' : 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '68px';
+      links.style.left = '0';
+      links.style.right = '0';
+      links.style.background = 'rgba(10,10,10,0.98)';
+      links.style.padding = '20px 6%';
+      links.style.gap = '20px';
+      links.style.borderBottom = '1px solid #1E1E1E';
+    });
+  }
+</script>
+
+</body>
+</html>
